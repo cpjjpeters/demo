@@ -1,11 +1,11 @@
 package com.example.demo.stad.persistance.entity;
 
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /* carlpeters created on 01/12/2022 inside the package - com.example.demo.stad.persistance.entity */
 @Entity
