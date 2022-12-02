@@ -31,14 +31,14 @@ public class StadEntityApiRestController {
         this.stadRepository = stadRepository;
     }
 
-    @GetMapping("/steden")
+    @GetMapping(value = "/steden", produces = "application/json")
     public List<StadJpaEntity> getAllSteden() {
         log.debug("getAllSteden");
         return stadRepository.findAll();
 
     }
 
-    @GetMapping("/steden/{id}")
+    @GetMapping(value = "/steden/{id}", produces = "application/json")
     public ResponseEntity<StadJpaEntity> getStadById(@PathVariable(value="id") Long id) throws ResourceNotFoundException {
 
         log.debug("getStadById");
@@ -49,12 +49,12 @@ public class StadEntityApiRestController {
 
     }
 
-    @PostMapping("/steden")
+    @PostMapping(value = "/steden", produces = "application/json")
     public StadJpaEntity createStad(@Valid @RequestBody StadJpaEntity stadJpaEntity) {
         return stadRepository.save(stadJpaEntity);
     }
 
-    @PutMapping("/steden/{id}")
+    @PutMapping(value = "/steden/{id}", produces = "application/json")
     public ResponseEntity<StadJpaEntity> updateStad(@PathVariable(value = "id") Long id,
                                                    @Valid @RequestBody StadJpaEntity stadDetails) throws ResourceNotFoundException {
         StadJpaEntity stadJpaEntity = stadRepository.findById(id)
@@ -67,7 +67,7 @@ public class StadEntityApiRestController {
         return ResponseEntity.ok(updatedStad);
     }
 
-    @DeleteMapping("/steden/{id}")
+    @DeleteMapping(value = "/steden/{id}", produces = "application/json")
     public Map<String, Boolean> deleteStad(@PathVariable(value = "id") Long id)
             throws ResourceNotFoundException {
         StadJpaEntity stadJpaEntity = stadRepository.findById(id)
