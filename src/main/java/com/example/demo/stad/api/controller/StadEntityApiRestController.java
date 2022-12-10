@@ -4,7 +4,7 @@ package com.example.demo.stad.api.controller;
 
 import com.example.demo.error.ResourceNotFoundException;
 import com.example.demo.stad.persistance.entity.StadJpaEntity;
-import com.example.demo.stad.repository.StadRepository;
+import com.example.demo.stad.repository.StadJpaPersistenceRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,10 +24,10 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/v1")
 public class StadEntityApiRestController {
-    private final StadRepository stadRepository;
+    private final StadJpaPersistenceRepository stadRepository;
 
 
-    public StadEntityApiRestController(StadRepository stadRepository) {
+    public StadEntityApiRestController(StadJpaPersistenceRepository stadRepository) {
         this.stadRepository = stadRepository;
     }
 

@@ -1,7 +1,7 @@
 package com.example.demo.stad.controller;
 
 import com.example.demo.stad.persistance.entity.StadJpaEntity;
-import com.example.demo.stad.repository.StadRepository;
+import com.example.demo.stad.repository.StadJpaPersistenceRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,9 +15,9 @@ import java.util.List;
 @RequestMapping(value = "/steden")//, produces = MediaType.APPLICATION_JSON_VALUE)
 public class StadEntityController {
 
-    private final StadRepository stadRepository;
+    private final StadJpaPersistenceRepository stadRepository;
 
-    public StadEntityController(StadRepository stadRepository) {
+    public StadEntityController(StadJpaPersistenceRepository stadRepository) {
         this.stadRepository = stadRepository;
     }
 
