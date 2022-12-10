@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.city.domain.model;
 
 import lombok.Data;
 

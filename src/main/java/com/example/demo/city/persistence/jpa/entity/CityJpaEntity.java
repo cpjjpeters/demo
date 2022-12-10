@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.city.persistence.jpa.entity;
 
 /* carlpeters created on 15/11/2022 inside the package - be.ipeters.crudapplication.entities */
 

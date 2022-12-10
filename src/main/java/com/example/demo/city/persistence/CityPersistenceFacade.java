@@ -1,4 +1,6 @@
-package com.example.demo;
+package com.example.demo.city.persistence;
+
+import com.example.demo.city.domain.model.City;
 
 import java.util.List;
 

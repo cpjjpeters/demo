@@ -1,6 +1,10 @@
-package com.example.demo;
+package com.example.demo.city.persistence.jpa;
 
 
+import com.example.demo.city.persistence.jpa.entity.CityJpaEntity;
+import com.example.demo.city.domain.model.City;
+import com.example.demo.city.persistence.CityPersistenceFacade;
+import com.example.demo.city.persistence.jpa.entity.mapper.CityJpaDaoMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

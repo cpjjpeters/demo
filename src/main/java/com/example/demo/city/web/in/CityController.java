@@ -1,12 +1,11 @@
-package com.example.demo;
+package com.example.demo.city.web.in;
 
+import com.example.demo.city.persistence.jpa.CityJpaPersistenceService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
 
 @Slf4j
 @Controller

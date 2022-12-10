@@ -1,5 +1,7 @@
-package com.example.demo;
+package com.example.demo.city.persistence.jpa.entity.mapper;
 
+import com.example.demo.city.persistence.jpa.entity.CityJpaEntity;
+import com.example.demo.city.domain.model.City;
 import org.mapstruct.Mapper;
 import org.springframework.beans.factory.annotation.Qualifier;
 
