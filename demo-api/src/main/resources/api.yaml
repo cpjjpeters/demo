@@ -45,3 +45,17 @@ components:
         emailId:
           type: string
           description: email address
+    City:
+      type: object
+      properties:
+#        id:
+#          type: integer
+#          format: int64
+#          description: The id of the City
+        name:
+          type: string
+          description: name of the City
+        population:
+          type: integer
+          format: int64
+          description: number of inhabtants of the City
