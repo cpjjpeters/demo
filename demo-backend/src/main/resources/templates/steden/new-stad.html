@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layouts :: header"></head>
+
+<body>
+<nav th:replace="layouts :: navbar"></nav>
+
+<div class="container">
+        <h3> new-stad.html</h3>
+    <form action="/crud/steden/save" th:object="${stad}" method="POST">
+
+        <input type="text" placeholder="Stad name" th:field="${stad.name}">
+        <input type="text" placeholder="Stad population" th:field="${stad.population}">
+        <button type="submit">Create Stad</button>
+    </form>
+</div>
+
+
+</body>
+</html>
