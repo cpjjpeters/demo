@@ -1,7 +1,7 @@
 package com.example.demo.employee.controller;
 
 
-import com.example.demo.employee.model.Employee;
+import com.example.demo.employee.persistence.entity.Employee;
 import com.example.demo.employee.repository.EmployeeRepository;
 import com.example.demo.error.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;

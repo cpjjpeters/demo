@@ -1,6 +1,6 @@
 package com.example.demo.common;
 
-import com.example.demo.employee.model.Employee;
+import com.example.demo.employee.persistence.entity.Employee;
 import com.example.demo.employee.repository.EmployeeRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
