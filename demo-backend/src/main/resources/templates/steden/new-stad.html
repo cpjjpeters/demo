@@ -8,8 +8,8 @@
 <nav th:replace="layouts :: navbar"></nav>
 
 <div class="container">
-        <h3> new-stad.html</h3>
-    <form action="/crud/steden/save" th:object="${stad}" method="POST">
+        <h3> Add a new Stad</h3>
+    <form action="/demo/steden/save" th:object="${stad}" method="POST">
 
         <input type="text" placeholder="Stad name" th:field="${stad.name}">
         <input type="text" placeholder="Stad population" th:field="${stad.population}">

@@ -9,7 +9,7 @@
 
 <div class="container">
         <h3> new-city.html</h3>
-    <form action="/crud/cities/save" th:object="${city}" method="POST">
+    <form action="/demo/cities/save" th:object="${city}" method="POST">
         <input type="text" placeholder="City name" th:field="*{city.name}">
         <input type="text" placeholder="City population" th:field="*{city.population}">
 

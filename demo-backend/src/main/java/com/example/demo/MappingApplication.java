@@ -2,9 +2,8 @@ package com.example.demo;
 
 import com.example.demo.city.persistence.jpa.CityJpaRepository;
 import com.example.demo.city.persistence.jpa.entity.CityJpaEntity;
-import com.example.demo.employee.model.Employee;
+import com.example.demo.employee.persistence.entity.Employee;
 import com.example.demo.employee.repository.EmployeeRepository;
-import com.example.demo.stad.model.Stad;
 import com.example.demo.stad.persistance.entity.StadJpaEntity;
 import com.example.demo.stad.repository.StadJpaPersistenceRepository;
 import lombok.extern.slf4j.Slf4j;
