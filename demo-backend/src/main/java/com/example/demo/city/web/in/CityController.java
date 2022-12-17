@@ -35,7 +35,7 @@ public class CityController {
     public String displayCityForm(Model model) {
         City aCity = new City();
         model.addAttribute("city", aCity);
-        return "new-city";
+        return "cities/new-city";
     }
 
     @PostMapping("/save")
@@ -43,30 +43,8 @@ public class CityController {
         log.debug("handle saving to DB");
 
         cityJpaPersistenceService.save(city);
-        return "redirect:/new";  // going up to GetMapping slash new
+        return "redirect:/cities";  // going up to GetMapping slash new
     }
 
-//    @GetMapping(value="/welkom")
-//    public String hello(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
-//        log.debug("Welcome!");
-//        model.addAttribute("name", name);
-//        return "welcome";
-//    }
-//
-//    @GetMapping(value = {"/indeks", "all"})
-//    public String index(Model model) {
-//        log.debug("getmapping slash");
-//        return "index";
-//    }
 
-//    @GetMapping(value="/steden")
-//    public ModelAndView showCities() {
-//        log.debug("getmapping slash cities");
-//        var cities = cityJpaPersistenceService.findAll();
-//
-//        var params = new HashMap<String, Object>();
-//        params.put("cities", cities);
-//
-//        return new ModelAndView("showCities", params);
-//    }
 }

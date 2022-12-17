@@ -8,10 +8,10 @@
 <nav th:replace="layouts :: navbar"></nav>
 
 <div class="container">
-        <h3> new-city.html</h3>
+        <h3>  Add a new City</h3>
     <form action="/demo/cities/save" th:object="${city}" method="POST">
-        <input type="text" placeholder="City name" th:field="*{city.name}">
-        <input type="text" placeholder="City population" th:field="*{city.population}">
+        <input type="text" placeholder="City name" th:field="${city.name}">
+        <input type="text" placeholder="City population" th:field="${city.population}">
 
         <button type="submit">Create City</button>
     </form>
