@@ -1,35 +1,24 @@
 package com.example.demo.city.domain.model;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
 public class City {
     private Long id;
     private String name;
+
+    private String urbanisation;
+
+    private String province;
+
+    private Double surface;
     private int population;
 
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getPopulation() {
-        return population;
-    }
-
-    public void setPopulation(int population) {
-        this.population = population;
-    }
 
     public City() {
     }
@@ -45,12 +34,4 @@ public class City {
         this.population = population;
     }
 
-    @Override
-    public String toString() {
-        return "City{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", population=" + population +
-                '}';
-    }
 }

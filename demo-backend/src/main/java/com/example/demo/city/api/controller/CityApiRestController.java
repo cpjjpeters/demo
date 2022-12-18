@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.constraints.Min;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,9 +32,9 @@ public class CityApiRestController {
         this.cityDtoMapper = cityDtoMapper;
     }
 
-    @GetMapping(value = {"/",""}, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<CityResource>> findAllCities(){
-        log.debug("findAllCities");
+    @GetMapping(value = {""}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<CityResource>> findAllCityResources(){
+        log.debug("findAllCityResources");
         List<City> cities = cityService.findAllCities();
         if(cities.isEmpty()){
             return ResponseEntity.notFound().build();
@@ -43,6 +44,15 @@ public class CityApiRestController {
                 .collect(Collectors.toList()));
     }
 
+    @GetMapping(value = {"/"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<City>> findAllCities(){
+        log.debug("findAllCities");
+        List<City> cities = cityService.findAllCities();
+        if(cities.isEmpty()){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(new ArrayList<>(cities));
+    }
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<CityResource> findCityById(@PathVariable("id") @Min(value = 1, message = "Invalid id value.") long id){
         log.debug("findCityById {}", id);
