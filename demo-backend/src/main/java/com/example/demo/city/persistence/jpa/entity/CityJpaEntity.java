@@ -22,17 +22,37 @@ public class CityJpaEntity {
 
     @Column(name = "NAME")
     private String name;
+    @Column(name="URBANISATION")
+    private String urbanisation;
+
+    @Column(name="PROVINCE")
+    private String province;
+
+    @Column(name="SURFACE")
+    private Double surface;
+
     @Column(name="POPULATION")
     private int population;
 
-    public CityJpaEntity(Long id, String name, int population) {
-        this.id = id;
+    public CityJpaEntity(String name, int population) {
         this.name = name;
         this.population = population;
     }
 
-    public CityJpaEntity(String name, int population) {
+    public CityJpaEntity(Long id, String name, String urbanisation, String province, Double surface, int population) {
+        this.id = id;
         this.name = name;
+        this.urbanisation = urbanisation;
+        this.province = province;
+        this.surface = surface;
+        this.population = population;
+    }
+
+    public CityJpaEntity(String name, String urbanisation, String province, Double surface, int population) {
+        this.name = name;
+        this.urbanisation = urbanisation;
+        this.province = province;
+        this.surface = surface;
         this.population = population;
     }
 
@@ -54,6 +74,30 @@ public class CityJpaEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getUrbanisation() {
+        return urbanisation;
+    }
+
+    public void setUrbanisation(String urbanisation) {
+        this.urbanisation = urbanisation;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public Double getSurface() {
+        return surface;
+    }
+
+    public void setSurface(Double surface) {
+        this.surface = surface;
     }
 
     public int getPopulation() {

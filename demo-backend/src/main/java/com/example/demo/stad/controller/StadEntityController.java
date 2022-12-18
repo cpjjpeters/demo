@@ -1,6 +1,5 @@
 package com.example.demo.stad.controller;
 
-import com.example.demo.stad.model.Stad;
 import com.example.demo.stad.persistance.entity.StadJpaEntity;
 import com.example.demo.stad.repository.StadJpaPersistenceRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -14,8 +13,8 @@ import java.util.List;
 
 /* carlpeters created on 02/12/2022 inside the package - com.example.demo.stad.controller */
 @Slf4j
-@Controller
-@RequestMapping(value = "/steden")//, produces = MediaType.APPLICATION_JSON_VALUE)
+//@Controller
+//@RequestMapping(value = "/steden")//, produces = MediaType.APPLICATION_JSON_VALUE)
 public class StadEntityController {
 
     private final StadJpaPersistenceRepository stadRepository;

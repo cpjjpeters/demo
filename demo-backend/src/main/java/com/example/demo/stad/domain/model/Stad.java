@@ -1,9 +1,12 @@
-package com.example.demo.stad.model;
+package com.example.demo.stad.domain.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-/* carlpeters created on 01/12/2022 inside the package - com.example.demo.stad.model */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Stad {
     private Long id;
     private String name;
@@ -13,4 +16,5 @@ public class Stad {
         this.name = name;
         this.population = population;
     }
+
 }

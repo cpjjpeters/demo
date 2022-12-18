@@ -9,6 +9,60 @@ tags:
     description: Demo application
 
 paths:
+  /demo/api/v1/cities:
+    get:
+      tags:
+        - City
+      operationId: findAllCities
+      summary: show a list of all cities
+      description: returns all the cities
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/City'
+        '204':
+          description: No content
+  /demo/api/v1/employees:
+    get:
+      tags:
+        - Steden
+      operationId: findAllSteden
+      summary: show a list of all steden
+      description: returns all the steden
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Stad'
+        '204':
+          description: No content
+  /demo/api/v1/employees:
+    get:
+      tags:
+        - Employee
+      operationId: findAllEmployees
+      summary: show a list of all employees
+      description: returns all the employees
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+        '204':
+          description: No content
   /demo/api/v1/employees:
     get:
       tags:

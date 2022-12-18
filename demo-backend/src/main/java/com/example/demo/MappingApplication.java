@@ -60,13 +60,18 @@ public class MappingApplication {
 			stadRepository.save(stad2);
 			stadRepository.save(stad3);
 
-			CityJpaEntity city1 = new CityJpaEntity("Gent", 263927);
-			CityJpaEntity city2 = new CityJpaEntity("Bergen", 95887);
-			CityJpaEntity city3 = new CityJpaEntity("Bilzen", 32477);
+			CityJpaEntity city1 = new CityJpaEntity("Gent", "grootstad","Oost-Vlaanderen",156.18, 264677);
+			CityJpaEntity city2 = new CityJpaEntity("Waver", "kleine stad","Waals-Brabant",78.12, 33365);
+			CityJpaEntity city3 = new CityJpaEntity("Bilzen", "kleine stad","Limburg",75.90,32477);
+			CityJpaEntity city4 = new CityJpaEntity("Aalst", "centrumstad","Oost-Vlaanderen",78.12,88760);
+			CityJpaEntity city5 = new CityJpaEntity("Blankenberge", "kuststad","West-Vlaanderen",17.41, 20399);
+			CityJpaEntity city6 = new CityJpaEntity("Oostende", "centrumstad","West-Vlaanderen",37.72, 71489);
 			cityJpaRepository.save(city1);
 			cityJpaRepository.save(city2);
 			cityJpaRepository.save(city3);
-
+			cityJpaRepository.save(city4);
+			cityJpaRepository.save(city5);
+			cityJpaRepository.save(city6);
 			Employee emp1 = new Employee("John", "Warton", "warton@gmail.com");
 			Employee emp2 = new Employee("Mike", "Lanister", "lanister@gmail.com");
 			Employee emp3 = new Employee("Steve", "Reeves", "Reeves@gmail.com");
