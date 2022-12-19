@@ -4,6 +4,8 @@ import com.example.demo.city.persistence.jpa.CityJpaRepository;
 import com.example.demo.city.persistence.jpa.entity.CityJpaEntity;
 import com.example.demo.employee.persistence.entity.Employee;
 import com.example.demo.employee.repository.EmployeeRepository;
+import com.example.demo.instrument.persistence.jpa.InstrumentJpaRepository;
+import com.example.demo.instrument.persistence.jpa.entity.InstrumentJpaEntity;
 import com.example.demo.stad.persistance.entity.StadJpaEntity;
 import com.example.demo.stad.repository.StadJpaPersistenceRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -49,10 +51,19 @@ public class MappingApplication {
 	@Autowired
 	CityJpaRepository cityJpaRepository;
 
+	@Autowired
+	InstrumentJpaRepository instrumentJpaRepository;
+
 	@Bean
 	CommandLineRunner runner() {
 
 		return args -> {
+			InstrumentJpaEntity in1 = new InstrumentJpaEntity(1L,"AB InBev","BE0974293251","BRU","eur");
+			InstrumentJpaEntity in2 = new InstrumentJpaEntity(2L,"Ahold Delhaize Koninklijke","NL0011794037","AEX","eur");
+			InstrumentJpaEntity in3 = new InstrumentJpaEntity(3L,"Carrefour","FR0000120172","PAR","eur");
+			instrumentJpaRepository.save(in1);
+			instrumentJpaRepository.save(in2);
+			instrumentJpaRepository.save(in3);
 			StadJpaEntity stad1 = new StadJpaEntity("Antwerpen", 529247);
 			StadJpaEntity stad2 = new StadJpaEntity("Brugge", 118656);
 			StadJpaEntity stad3 = new StadJpaEntity("Luik", 197217);

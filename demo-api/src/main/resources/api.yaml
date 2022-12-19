@@ -13,7 +13,7 @@ paths:
     get:
       tags:
         - City
-      operationId: findAllCities
+      operationId: findAllCityResources
       summary: show a list of all cities
       description: returns all the cities
       responses:
@@ -27,7 +27,7 @@ paths:
                   $ref: '#/components/schemas/City'
         '204':
           description: No content
-  /demo/api/v1/employees:
+  /demo/api/v1/steden:
     get:
       tags:
         - Steden
@@ -45,6 +45,7 @@ paths:
                   $ref: '#/components/schemas/Stad'
         '204':
           description: No content
+
   /demo/api/v1/employees:
     get:
       tags:
@@ -63,13 +64,13 @@ paths:
                   $ref: '#/components/schemas/Employee'
         '204':
           description: No content
-  /demo/api/v1/employees:
+  /demo/api/v1/cities/:
     get:
       tags:
-        - Employee
-      operationId: findAllEmployees
-      summary: show a list of all employees
-      description: returns all the employees
+        - Cities
+      operationId: findAllCities
+      summary: show a list of all cities
+      description: returns all the cities
       responses:
         '200':
           description: OK
@@ -78,11 +79,152 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Employee'
+                  $ref: '#/components/schemas/City'
         '204':
           description: No content
+
+  /demo/api/v1/instruments/:
+    get:
+      tags:
+        - Instruments
+      operationId: findAllInstruments
+      summary: show a list of all instruments
+      description: returns all the instruments, ordered
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Instrument'
+        '204':
+          description: No content
+
+    post:
+      tags:
+        - Instruments
+      summary: Add a new instrument
+      description: Add a new instrument
+      operationId: addInstrument
+      requestBody:
+        description: Create a new instrument
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Instrument"
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Instrument"
+        '405':
+          description: Invalid input
+
+  /demo/api/v1/instruments/{id}:
+    get:
+      tags:
+        - Instruments
+      summary: Find Instrument by ID
+      description: Returns a single Instrument
+      operationId: getInstrumentById
+      parameters:
+        - name: id
+          in: path
+          description: id of Instrument to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Instrument'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Pet not found
+    put:
+      tags:
+        - Instruments
+      operationId: updateInstrument
+      summary: update
+      description: Update
+      parameters:
+        - name: id
+          in: path
+          description:  The id of the instrument you want to update
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        description: the necessary fields.
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Instrument"
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Instrument"
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Instrument not found
+        '405':
+          description: Validation exception
+
+    delete:
+      tags:
+        - Instruments
+      summary: Deletes an instrument
+      description: delete an instrument
+      operationId: deleteInstrument
+      parameters:
+        - name: id
+          in: path
+          description: instrument id to delete
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '400':
+          description: Invalid instrument value
+
 components:
   schemas:
+    Instrument:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: The id of the Instrument
+        name:
+          type: string
+          description: The name of the Instrument
+        isinCode:
+          type: string
+          description: The isin of the Instrument
+        initialMarket:
+          type: string
+          description: The stockMarket of the Instrument
+        currency:
+          type: string
+          description: The currency of the Instrument
+
     Employee:
       type: object
       properties:
@@ -102,14 +244,29 @@ components:
     City:
       type: object
       properties:
-#        id:
-#          type: integer
-#          format: int64
-#          description: The id of the City
+        id:
+          type: integer
+          format: int64
+          description: The id of the City
         name:
           type: string
           description: name of the City
         population:
           type: integer
           format: int64
-          description: number of inhabtants of the City
+          description: number of inhabitants of the City
+    Stad:
+      type: object
+      properties:
+        #        id:
+        #          type: integer
+        #          format: int64
+        #          description: The id of the     Stad
+        name:
+          type: string
+          description: name of the   Stad
+
+        population:
+          type: integer
+          format: int64
+          description: number of inhabtants of the Stad
